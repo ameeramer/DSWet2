@@ -9,42 +9,44 @@
 #ifndef Union_h
 #define Union_h
 
-template<class KeyType, class ValueType>
+#include <iostream>
+
+template<class ValueType>
 struct SetInfo;
 
-template<class KeyType, class ValueType>
+template<class ValueType>
 struct Node;
 
-template<class KeyType, class ValueType>
+template<class ValueType>
 struct Node{
     int key;
     ValueType* data;
     struct Node* parent;
-    struct SetInfo<KeyType, ValueType>* setInfo;
+    struct SetInfo<ValueType>* setInfo;
 };
 
-template<class KeyType, class ValueType>
+template<class ValueType>
 struct SetInfo{
     int setNum;
-    struct Node<KeyType, ValueType>* rootOfSet;
+    struct Node<ValueType>* rootOfSet;
     int numOfElements;
 };
 
-template <class KeyType, class ValueType>
+template <class ValueType>
 class UnionFind {
-    struct Node<KeyType, ValueType>** arrayOfNodes;
-    struct SetInfo<KeyType,ValueType>** arrayOfSets;
+    struct Node<ValueType>** arrayOfNodes;
+    struct SetInfo<ValueType>** arrayOfSets;
     
 public:
     UnionFind(int n, int keys[], ValueType* values[]){
-        arrayOfNodes = new struct Node<KeyType,ValueType>*[n];
-        arrayOfSets = new struct SetInfo<KeyType,ValueType>*[n];
+        arrayOfNodes = new struct Node<ValueType>*[n];
+        arrayOfSets = new struct SetInfo<ValueType>*[n];
         for (int i=0; i<n; i++) {
-            arrayOfNodes[i] = new struct Node<KeyType,ValueType>;
+            arrayOfNodes[i] = new struct Node<ValueType>;
             arrayOfNodes[i]->key = keys[i];
             arrayOfNodes[i]->data = values[i];
             arrayOfNodes[i]->parent = arrayOfNodes[i];
-            arrayOfNodes[i]->setInfo = new SetInfo<KeyType, ValueType>;
+            arrayOfNodes[i]->setInfo = new SetInfo<ValueType>;
             arrayOfNodes[i]->setInfo->setNum = i;
             arrayOfNodes[i]->setInfo->rootOfSet = arrayOfNodes[i];
             arrayOfNodes[i]->setInfo->numOfElements = 1;
@@ -52,7 +54,7 @@ public:
         }
     }
     
-    struct Node<KeyType,ValueType>* findAux(struct Node<KeyType, ValueType>* node){
+    struct Node<ValueType>* findAux(struct Node<ValueType>* node){
         if(node->parent != node){
             node->parent = findAux(node->parent);
         }
