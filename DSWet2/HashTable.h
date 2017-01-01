@@ -58,6 +58,10 @@ public:
         }
         return null;
     }
+    
+    struct ListNode* getFirstNode(){
+        return head->next;
+    }
 };
 
 template <class T>
@@ -66,7 +70,10 @@ class DynamicHashTable {
     int size;
     
     static void multiplySize {
-        
+        List newList;
+        for(int i=0; i<size; i++){
+            
+        }
     }
 };
 
