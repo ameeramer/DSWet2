@@ -7,7 +7,8 @@
 //
 
 #include "HashTable.h"
-
+#include "Magizoologist.h"
+#include "Reserve.h"
 int main(int argc, const char * argv[]) {
     DynamicHashTable<int> hashTable1;
     int* values[10];

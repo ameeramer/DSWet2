@@ -10,7 +10,9 @@
 		82CB4D2F1E1722870058F507 /* Union.h in Sources */ = {isa = PBXBuildFile; fileRef = 82CB4D2E1E170E5F0058F507 /* Union.h */; };
 		82CB4D321E1722F90058F507 /* Union.h in Headers */ = {isa = PBXBuildFile; fileRef = 82CB4D2E1E170E5F0058F507 /* Union.h */; };
 		82CB4D361E17E3D40058F507 /* HashTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 82CB4D351E17E3D40058F507 /* HashTable.h */; };
-		82CB4D3A1E197BCF0058F507 /* HashTableTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82CB4D371E1976930058F507 /* HashTableTest.cpp */; };
+		82CB4D3C1E1980570058F507 /* Magizoologist.h in Headers */ = {isa = PBXBuildFile; fileRef = 82CB4D3B1E1980570058F507 /* Magizoologist.h */; };
+		82CB4D431E1981E50058F507 /* Reserve.h in Headers */ = {isa = PBXBuildFile; fileRef = 82CB4D421E1981E50058F507 /* Reserve.h */; };
+		82CB4D471E198BE40058F507 /* HashTableTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82CB4D371E1976930058F507 /* HashTableTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +34,8 @@
 		82CB4D331E1733F40058F507 /* UnionTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnionTest.cpp; sourceTree = "<group>"; };
 		82CB4D351E17E3D40058F507 /* HashTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HashTable.h; sourceTree = "<group>"; };
 		82CB4D371E1976930058F507 /* HashTableTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HashTableTest.cpp; sourceTree = "<group>"; };
+		82CB4D3B1E1980570058F507 /* Magizoologist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Magizoologist.h; sourceTree = "<group>"; };
+		82CB4D421E1981E50058F507 /* Reserve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reserve.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				82CB4D331E1733F40058F507 /* UnionTest.cpp */,
 				82CB4D351E17E3D40058F507 /* HashTable.h */,
 				82CB4D371E1976930058F507 /* HashTableTest.cpp */,
+				82CB4D3B1E1980570058F507 /* Magizoologist.h */,
+				82CB4D421E1981E50058F507 /* Reserve.h */,
 			);
 			path = DSWet2;
 			sourceTree = "<group>";
@@ -81,7 +87,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				82CB4D321E1722F90058F507 /* Union.h in Headers */,
+				82CB4D3C1E1980570058F507 /* Magizoologist.h in Headers */,
 				82CB4D361E17E3D40058F507 /* HashTable.h in Headers */,
+				82CB4D431E1981E50058F507 /* Reserve.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82CB4D3A1E197BCF0058F507 /* HashTableTest.cpp in Sources */,
+				82CB4D471E198BE40058F507 /* HashTableTest.cpp in Sources */,
 				82CB4D2F1E1722870058F507 /* Union.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,52 +11,47 @@
 
 #include <iostream>
 
-template<class ValueType>
 struct SetInfo;
 
-template<class ValueType>
 struct Node;
 
-template<class ValueType>
 struct Node{
     int key;
-    ValueType* data;
     struct Node* parent;
-    struct SetInfo<ValueType>* setInfo;
+    struct SetInfo* setInfo;
 };
 
-template<class ValueType>
 struct SetInfo{
     int setNum;
-    struct Node<ValueType>* rootOfSet;
+    struct Node* rootOfSet;
     int numOfElements;
+    int otherData;
 };
 
-template <class ValueType>
 class UnionFind {
-    struct Node<ValueType>** arrayOfNodes;
-    struct SetInfo<ValueType>** arrayOfSets;
+    struct Node** arrayOfNodes;
+    struct SetInfo** arrayOfSets;
     int size;
     
 public:
-    UnionFind(int n, int keys[], ValueType* values[]){
+    UnionFind(int n, int* data){
         size = n;
-        arrayOfNodes = new struct Node<ValueType>*[n];
-        arrayOfSets = new struct SetInfo<ValueType>*[n];
+        arrayOfNodes = new struct Node*[n];
+        arrayOfSets = new struct SetInfo*[n];
         for (int i=0; i<n; i++) {
-            arrayOfNodes[i] = new struct Node<ValueType>;
-            arrayOfNodes[i]->key = keys[i];
-            arrayOfNodes[i]->data = values[i];
+            arrayOfNodes[i] = new struct Node;
+            arrayOfNodes[i]->key = i;
             arrayOfNodes[i]->parent = arrayOfNodes[i];
-            arrayOfNodes[i]->setInfo = new SetInfo<ValueType>;
+            arrayOfNodes[i]->setInfo = new SetInfo;
             arrayOfNodes[i]->setInfo->setNum = i;
             arrayOfNodes[i]->setInfo->rootOfSet = arrayOfNodes[i];
             arrayOfNodes[i]->setInfo->numOfElements = 1;
+            arrayOfNodes[i]->setInfo->otherData = data[i];
             arrayOfSets[i] = arrayOfNodes[i]->setInfo;
         }
     }
     
-    struct Node<ValueType>* findAux(struct Node<ValueType>* node){
+    struct Node* findAux(struct Node* node){
         if(node->parent != node){
             node->parent = findAux(node->parent);
         }
@@ -75,15 +70,27 @@ public:
         if(arrayOfSets[set1]->numOfElements <= arrayOfSets[set2]->numOfElements){
             arrayOfSets[set1]->rootOfSet->parent = arrayOfSets[set2]->rootOfSet;
             arrayOfSets[set2]->numOfElements += arrayOfSets[set1]->numOfElements;
+            arrayOfSets[set2]->otherData += arrayOfSets[set1]->otherData;
             delete arrayOfSets[set1];
             arrayOfSets[set1] = NULL;
         }
         else{
             arrayOfSets[set2]->rootOfSet->parent = arrayOfSets[set1]->rootOfSet;
             arrayOfSets[set1]->numOfElements += arrayOfSets[set2]->numOfElements;
+            arrayOfSets[set1]->otherData += arrayOfSets[set2]->otherData;
             delete arrayOfSets[set2];
             arrayOfSets[set2] = NULL;
         }
+    }
+    
+    int sizeOfSet(int key){
+        int set = find(key);
+        return arrayOfSets[set]->numOfElements;
+    }
+    
+    int dataOfSet(int key){
+        int set = find(key);
+        return arrayOfSets[set]->otherData;
     }
     
     ~UnionFind(){
