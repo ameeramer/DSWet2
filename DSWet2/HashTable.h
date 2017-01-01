@@ -38,12 +38,13 @@ public:
     }
     
     void deleteElement(int key){
-        struct ListNode<T>* curr = head->next;
+        struct ListNode<T>* curr = head;
         while(curr->next){
             if(curr->next->key == key){
                 struct ListNode<T>* toDelete = curr->next;
                 curr->next = toDelete->next;
                 delete (toDelete);
+                break;
             }
             curr = curr->next;
         }

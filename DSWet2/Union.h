@@ -36,9 +36,11 @@ template <class ValueType>
 class UnionFind {
     struct Node<ValueType>** arrayOfNodes;
     struct SetInfo<ValueType>** arrayOfSets;
+    int size;
     
 public:
     UnionFind(int n, int keys[], ValueType* values[]){
+        size = n;
         arrayOfNodes = new struct Node<ValueType>*[n];
         arrayOfSets = new struct SetInfo<ValueType>*[n];
         for (int i=0; i<n; i++) {
@@ -82,6 +84,15 @@ public:
             delete arrayOfSets[set2];
             arrayOfSets[set2] = NULL;
         }
+    }
+    
+    ~UnionFind(){
+        for(int i=0; i<size; i++){
+            delete arrayOfNodes[i];
+            delete arrayOfSets[i];
+        }
+        delete[] arrayOfNodes;
+        delete[] arrayOfSets;
     }
 };
 

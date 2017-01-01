@@ -27,5 +27,17 @@ int main(int argc, const char * argv[]) {
     std::cout << *hashTable1.Get(5) <<std::endl;
     hashTable1.Insert(6,values[6]);
     std::cout << *hashTable1.Get(6) <<std::endl;
+    hashTable1.Delete(6);
+    std::cout << hashTable1.Get(6) <<std::endl;//should print 0x0 (NULL)
+    hashTable1.Delete(5);
+    std::cout << hashTable1.Get(5) <<std::endl;//should print 0x0 (NULL)
+    hashTable1.Delete(4);
+    std::cout << hashTable1.Get(4) <<std::endl;//should print 0x0 (NULL)
+    hashTable1.Delete(3);
+    std::cout << hashTable1.Get(3) <<std::endl;//should print 0x0 (NULL)
+    hashTable1.Delete(2);
+    std::cout << hashTable1.Get(2) <<std::endl;//should print 0x0 (NULL)
+    hashTable1.Delete(1);
+    std::cout << hashTable1.Get(1) <<std::endl;//should print 0x0 (NULL)
     return 0;
 }
