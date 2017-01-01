@@ -9,6 +9,7 @@
 #ifndef HashTable_h
 #define HashTable_h
 
+#include <iostream>
 template <class T>
 struct ListNode {
     int key;
@@ -18,18 +19,18 @@ struct ListNode {
 
 template <class T>
 class List {
-    struct ListNode* head;
+    struct ListNode<T>* head;
     
 public:
     List(){
-        head = new struct ListNode;
+        head = new struct ListNode<T>;
         head->key = -1;
-        head->data = null;
-        head->next = null;
+        head->data = NULL;
+        head->next = NULL;
     }
     
     void Insert(int key, T* data){
-        struct ListNode* newNode = new struct ListNode;
+        struct ListNode<T>* newNode = new struct ListNode<T>;
         newNode->key = key;
         newNode->data = data;
         newNode->next = head->next;
@@ -37,11 +38,11 @@ public:
     }
     
     void deleteElement(int key){
-        struct ListNode* curr = head->next;
+        struct ListNode<T>* curr = head->next;
         while(curr->next){
-            if(curr->next->key = key){
-                struct ListNode* toDelete = curr->next;
-                curr->next = toDelte->next;
+            if(curr->next->key == key){
+                struct ListNode<T>* toDelete = curr->next;
+                curr->next = toDelete->next;
                 delete (toDelete);
             }
             curr = curr->next;
@@ -49,23 +50,23 @@ public:
     }
     
     T* getElement(int key){
-        struct ListNode* curr = head->next;
+        struct ListNode<T>* curr = head->next;
         while(curr){
-            if(curr->key = key){
+            if(curr->key == key){
                 return curr->data;
             }
             curr = curr->next;
         }
-        return null;
+        return NULL;
     }
     
-    struct ListNode* getFirstNode(){
+    struct ListNode<T>* getFirstNode(){
         return head->next;
     }
     
     ~List(){
-        struct ListNode* curr = head;
-        struct ListNode* toDelete;
+        struct ListNode<T>* curr = head;
+        struct ListNode<T>* toDelete;
         while(curr){
             toDelete = curr;
             curr = curr->next;
@@ -76,19 +77,20 @@ public:
 
 template <class T>
 class DynamicHashTable {
-    List** array;
+    List<T>** array;
     int size;
     int numOfElements;
     
-    static void changeSize(int newSize) {
-        List** newArray = new List*[newSize];
+    void changeSize(int newSize) {
+        List<T>** newArray = new List<T>*[newSize];
         for(int i=0; i<newSize; i++){
-            newArray[i] = new List();
+            newArray[i] = new List<T>();
         }
         for(int i=0; i<size; i++){
-            struct ListNode* curr = array[i]->getFirstNode();
+            struct ListNode<T>* curr = array[i]->getFirstNode();
             while(curr){
-                newArray[curr->key%(newSize)]->insert(curr->key, curr->data);
+                newArray[curr->key%(newSize)]->Insert(curr->key, curr->data);
+                curr = curr->next;
             }
             delete array[i];
         }
@@ -97,18 +99,18 @@ class DynamicHashTable {
         size = newSize;
     }
     
-    static void divideSize(){
+    void divideSize(){
         changeSize(size/2);
     }
     
-    static void multiplySize(){
+    void multiplySize(){
         changeSize(size*2);
     }
     
 public:
     DynamicHashTable(){
-        array = new List*[1];
-        array[1] = new List();
+        array = new List<T>*[1];
+        array[0] = new List<T>();
         size = 1;
         numOfElements = 0;
     }
@@ -118,11 +120,11 @@ public:
         if(numOfElements > 5*size){
             multiplySize();
         }
-        array[key%size]->insert(key,data);
+        array[key%size]->Insert(key,data);
     }
     
     void Delete(int key){
-        numOfElemets -= 1;
+        numOfElements -= 1;
         array[key%size]->deleteElement(key);
         if(numOfElements < size/5){
             divideSize();
