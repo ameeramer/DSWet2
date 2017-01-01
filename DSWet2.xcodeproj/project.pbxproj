@@ -10,6 +10,7 @@
 		82CB4D2F1E1722870058F507 /* Union.h in Sources */ = {isa = PBXBuildFile; fileRef = 82CB4D2E1E170E5F0058F507 /* Union.h */; };
 		82CB4D321E1722F90058F507 /* Union.h in Headers */ = {isa = PBXBuildFile; fileRef = 82CB4D2E1E170E5F0058F507 /* Union.h */; };
 		82CB4D341E1733F40058F507 /* UnionTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82CB4D331E1733F40058F507 /* UnionTest.cpp */; };
+		82CB4D361E17E3D40058F507 /* HashTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 82CB4D351E17E3D40058F507 /* HashTable.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 		82CB4D271E170D400058F507 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		82CB4D2E1E170E5F0058F507 /* Union.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Union.h; sourceTree = "<group>"; };
 		82CB4D331E1733F40058F507 /* UnionTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnionTest.cpp; sourceTree = "<group>"; };
+		82CB4D351E17E3D40058F507 /* HashTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HashTable.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				82CB4D271E170D400058F507 /* main.cpp */,
 				82CB4D2E1E170E5F0058F507 /* Union.h */,
 				82CB4D331E1733F40058F507 /* UnionTest.cpp */,
+				82CB4D351E17E3D40058F507 /* HashTable.h */,
 			);
 			path = DSWet2;
 			sourceTree = "<group>";
@@ -76,6 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82CB4D321E1722F90058F507 /* Union.h in Headers */,
+				82CB4D361E17E3D40058F507 /* HashTable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +272,7 @@
 				82CB4D2D1E170D400058F507 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
