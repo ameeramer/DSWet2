@@ -62,18 +62,82 @@ public:
     struct ListNode* getFirstNode(){
         return head->next;
     }
+    
+    ~List(){
+        struct ListNode* curr = head;
+        struct ListNode* toDelete;
+        while(curr){
+            toDelete = curr;
+            curr = curr->next;
+            delete(toDelete);
+        }
+    }
 };
 
 template <class T>
 class DynamicHashTable {
-    List* array;
+    List** array;
     int size;
+    int numOfElements;
     
-    static void multiplySize {
-        List newList;
-        for(int i=0; i<size; i++){
-            
+    static void changeSize(int newSize) {
+        List** newArray = new List*[newSize];
+        for(int i=0; i<newSize; i++){
+            newArray[i] = new List();
         }
+        for(int i=0; i<size; i++){
+            struct ListNode* curr = array[i]->getFirstNode();
+            while(curr){
+                newArray[curr->key%(newSize)]->insert(curr->key, curr->data);
+            }
+            delete array[i];
+        }
+        delete[] array;
+        array = newArray;
+        size = newSize;
+    }
+    
+    static void divideSize(){
+        changeSize(size/2);
+    }
+    
+    static void multiplySize(){
+        changeSize(size*2);
+    }
+    
+public:
+    DynamicHashTable(){
+        array = new List*[1];
+        array[1] = new List();
+        size = 1;
+        numOfElements = 0;
+    }
+    
+    void Insert(int key, T* data){
+        numOfElements+=1;
+        if(numOfElements > 5*size){
+            multiplySize();
+        }
+        array[key%size]->insert(key,data);
+    }
+    
+    void Delete(int key){
+        numOfElemets -= 1;
+        array[key%size]->deleteElement(key);
+        if(numOfElements < size/5){
+            divideSize();
+        }
+    }
+    
+    T* Get(int key){
+        return array[key%size]->getElement(key);
+    }
+    
+    ~DynamicHashTable(){
+        for(int i=0; i<size; i++){
+            delete array[i];
+        }
+        delete[] array;
     }
 };
 
