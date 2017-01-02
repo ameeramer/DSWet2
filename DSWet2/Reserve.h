@@ -53,6 +53,11 @@ public:
         return creatures.sizeOfSet(creatureID);
     }
     
+    //TODO: delete this method.
+    void assignForTest(int magiID, int crID){
+        magis.Get(magiID)->assignCreature(crID);
+    }
+    
     //TODO: add the assignCreatureToMagi method.
 };
 
