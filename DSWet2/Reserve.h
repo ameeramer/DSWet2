@@ -12,12 +12,21 @@
 #include "HashTable.h"
 #include "Union.h"
 #include "Magizoologist.h"
+
+
+class CompareInts {
+public:
+    bool operator()(int a, int b){
+        return a <= b;
+    }
+};
+
 class Reserve{
     DynamicHashTable<Magizoologist> magis;
     UnionFind creatures;
     int levels[];
     //TODO: add ranked tree property for magis.
-    
+    //RankedTree<int,Magizoologist,CompareInts> magisTree;
 public:
     Reserve(int n, int levels1[]) : creatures(n,levels1){
         for(int i=0; i<n; i++){
@@ -28,10 +37,12 @@ public:
     void AddMagizoologist(int magiID, int magiLvl){
         Magizoologist* magiToAdd = new Magizoologist(magiID, magiLvl);
         magis.Insert(magiID, magiToAdd);
+        //magisTree.Insert(magiID, magiToAdd);
     }
     //TODO: add deleting from the ranked tree.
     void RemoveMagizoologist(int magiID){
         magis.Delete(magiID);
+        //magisTree.Delete(magiID);
     }
     
     void RemoveBarrier(int creature1, int creature2){

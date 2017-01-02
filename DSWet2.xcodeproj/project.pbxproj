@@ -12,7 +12,7 @@
 		82CB4D361E17E3D40058F507 /* HashTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 82CB4D351E17E3D40058F507 /* HashTable.h */; };
 		82CB4D3C1E1980570058F507 /* Magizoologist.h in Headers */ = {isa = PBXBuildFile; fileRef = 82CB4D3B1E1980570058F507 /* Magizoologist.h */; };
 		82CB4D431E1981E50058F507 /* Reserve.h in Headers */ = {isa = PBXBuildFile; fileRef = 82CB4D421E1981E50058F507 /* Reserve.h */; };
-		82CB4D491E1A42F80058F507 /* ReserveInitialTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82CB4D481E1A42F80058F507 /* ReserveInitialTest.cpp */; };
+		82CB4D4B1E1A93630058F507 /* HashTableTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82CB4D371E1976930058F507 /* HashTableTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -154,7 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82CB4D491E1A42F80058F507 /* ReserveInitialTest.cpp in Sources */,
+				82CB4D4B1E1A93630058F507 /* HashTableTest.cpp in Sources */,
 				82CB4D2F1E1722870058F507 /* Union.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
