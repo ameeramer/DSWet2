@@ -28,38 +28,11 @@ class AVLTree{
     //private methods
     void fixYoungestRight(struct AVLTreeNode<KeyType,ValueType>* node)
     {
-//        int right,left;
-//        left = node->right->youngestInLeft;
-//        right = node->right->youngestInRight;
-//        if(node->right->youngestInLeft==-1)
-//            left=node->right->age;
-//        if(node->right->youngestInRight==-1)
-//            right=node->right->age;
         node->rKey = max3(node->right->key,node->right->rKey,node->right->lKey);
-//        if(node->youngestInRight==node->right->key)
-//                node->rKey=node->right->key;
-//        else if(node->youngestInRight==node->right->youngestInLeft)
-//            node->rKey=node->right->lKey;
-//        else if(node->youngestInRight==node->right->youngestInRight)
-//            node->rKey=node->right->rKey;
-
     }
     void fixYoungestLeft(struct AVLTreeNode<KeyType,ValueType>* node)
     {
-//        int right,left;
-//        right = node->left->youngestInRight;
-//        left = node->left->youngestInLeft;
-//        if(node->left->youngestInLeft==-1)
-//            left=node->left->age;
-//        if(node->left->youngestInRight==-1)
-//            right=node->left->age;
         node->lKey = max3(node->left->key,node->left->rKey,node->left->lKey);
-//        if(node->youngestInLeft==node->left->age)
-//            node->lKey=node->left->key;
-//        else if(node->youngestInLeft==node->left->youngestInLeft)
-//            node->lKey=node->left->lKey;
-//        else if(node->youngestInLeft==node->left->youngestInRight)
-//            node->lKey=node->left->rKey;
     }
     const KeyType* max3(const KeyType* one,const KeyType* two,const KeyType* three)
     {
@@ -70,21 +43,8 @@ class AVLTree{
     }
     void rollLL(struct AVLTreeNode<KeyType,ValueType>* root) {
         struct AVLTreeNode<KeyType,ValueType>* leftSon = root->left;
-        //root->youngestInLeft = leftSon->youngestInRight;
         root->lKey = leftSon->rKey;
         leftSon->rKey = max3(leftSon->rKey,root->key,root->rKey);
-       // if(leftSon->youngestInRight<root->age)
-//        if(CompareAge()(leftSon->rKey,root->key))
-//        {
-//            leftSon->rKey=root->key;
-//            //leftSon->youngestInRight = root->age;
-//        }
-//        //if(leftSon->youngestInRight<root->youngestInRight)
-//        if(CompareAge()(leftSon->rKey,root->rKey))
-//        {
-//            leftSon->rKey=root->rKey;
-//            //leftSon->youngestInRight=root->youngestInRight;
-//        }
         leftSon->rHeight = 1 + ((leftSon->rHeight>root->rHeight) ? leftSon->rHeight : root->rHeight);
         root->lHeight=leftSon->rHeight;
         root->left = leftSon->right;
@@ -104,18 +64,8 @@ class AVLTree{
     {
         struct AVLTreeNode<KeyType,ValueType>* temp;
         temp = root->right;
-      //  root->youngestInRight =  temp->youngestInLeft;
         root->rKey = temp->lKey;
         temp->lKey = max3(temp->lKey,root->key,root->lKey);
-        //if(temp->youngestInLeft<root->age)
-//        if(CompareAge()(temp->lKey,root->key))
-//            temp->youngestInLeft = root->age;
-//            temp->lKey = root->key;
-//        if(temp->youngestInLeft < root->youngestInLeft)
-//        {
-//            temp->youngestInLeft = root->youngestInLeft;
-//            temp->lKey = root->lKey;
-//        }
         root->rHeight=temp->lHeight;
         temp->lHeight = 1 + ((temp->lHeight>root->lHeight) ? temp->lHeight : root->lHeight);
         root->right = root->right->left;
