@@ -7,15 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8245E9491E23C94500773131 /* library2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8245E9481E23C94500773131 /* library2.cpp */; };
+		8245E94C1E23C95000773131 /* library2.h in Headers */ = {isa = PBXBuildFile; fileRef = 8245E94A1E23C95000773131 /* library2.h */; };
+		8245E94D1E23C95000773131 /* main2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8245E94B1E23C95000773131 /* main2.cpp */; };
+		82C03D731E1C230B00D0A360 /* AVLTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 82C03D721E1C230B00D0A360 /* AVLTree.h */; };
 		82CB4D2F1E1722870058F507 /* Union.h in Sources */ = {isa = PBXBuildFile; fileRef = 82CB4D2E1E170E5F0058F507 /* Union.h */; };
 		82CB4D321E1722F90058F507 /* Union.h in Headers */ = {isa = PBXBuildFile; fileRef = 82CB4D2E1E170E5F0058F507 /* Union.h */; };
 		82CB4D361E17E3D40058F507 /* HashTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 82CB4D351E17E3D40058F507 /* HashTable.h */; };
 		82CB4D3C1E1980570058F507 /* Magizoologist.h in Headers */ = {isa = PBXBuildFile; fileRef = 82CB4D3B1E1980570058F507 /* Magizoologist.h */; };
 		82CB4D431E1981E50058F507 /* Reserve.h in Headers */ = {isa = PBXBuildFile; fileRef = 82CB4D421E1981E50058F507 /* Reserve.h */; };
-		82CB4D4B1E1A93630058F507 /* HashTableTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82CB4D371E1976930058F507 /* HashTableTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		8226822F1E23CF2200D948C9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		82CB4D221E170D400058F507 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -28,15 +40,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8245E9481E23C94500773131 /* library2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = library2.cpp; sourceTree = "<group>"; };
+		8245E94A1E23C95000773131 /* library2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = library2.h; sourceTree = "<group>"; };
+		8245E94B1E23C95000773131 /* main2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main2.cpp; sourceTree = "<group>"; };
+		82C03D721E1C230B00D0A360 /* AVLTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVLTree.h; sourceTree = "<group>"; };
 		82CB4D241E170D400058F507 /* DSWet2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DSWet2; sourceTree = BUILT_PRODUCTS_DIR; };
-		82CB4D271E170D400058F507 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		82CB4D2E1E170E5F0058F507 /* Union.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Union.h; sourceTree = "<group>"; };
-		82CB4D331E1733F40058F507 /* UnionTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnionTest.cpp; sourceTree = "<group>"; };
 		82CB4D351E17E3D40058F507 /* HashTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HashTable.h; sourceTree = "<group>"; };
-		82CB4D371E1976930058F507 /* HashTableTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HashTableTest.cpp; sourceTree = "<group>"; };
 		82CB4D3B1E1980570058F507 /* Magizoologist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Magizoologist.h; sourceTree = "<group>"; };
 		82CB4D421E1981E50058F507 /* Reserve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reserve.h; sourceTree = "<group>"; };
-		82CB4D481E1A42F80058F507 /* ReserveInitialTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReserveInitialTest.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,14 +81,14 @@
 		82CB4D261E170D400058F507 /* DSWet2 */ = {
 			isa = PBXGroup;
 			children = (
-				82CB4D271E170D400058F507 /* main.cpp */,
+				82C03D721E1C230B00D0A360 /* AVLTree.h */,
 				82CB4D2E1E170E5F0058F507 /* Union.h */,
-				82CB4D331E1733F40058F507 /* UnionTest.cpp */,
 				82CB4D351E17E3D40058F507 /* HashTable.h */,
-				82CB4D371E1976930058F507 /* HashTableTest.cpp */,
+				8245E94A1E23C95000773131 /* library2.h */,
+				8245E94B1E23C95000773131 /* main2.cpp */,
+				8245E9481E23C94500773131 /* library2.cpp */,
 				82CB4D3B1E1980570058F507 /* Magizoologist.h */,
 				82CB4D421E1981E50058F507 /* Reserve.h */,
-				82CB4D481E1A42F80058F507 /* ReserveInitialTest.cpp */,
 			);
 			path = DSWet2;
 			sourceTree = "<group>";
@@ -91,7 +103,9 @@
 				82CB4D321E1722F90058F507 /* Union.h in Headers */,
 				82CB4D3C1E1980570058F507 /* Magizoologist.h in Headers */,
 				82CB4D361E17E3D40058F507 /* HashTable.h in Headers */,
+				82C03D731E1C230B00D0A360 /* AVLTree.h in Headers */,
 				82CB4D431E1981E50058F507 /* Reserve.h in Headers */,
+				8245E94C1E23C95000773131 /* library2.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +120,7 @@
 				82CB4D211E170D400058F507 /* Frameworks */,
 				82CB4D221E170D400058F507 /* CopyFiles */,
 				82CB4D301E1722D30058F507 /* Headers */,
+				8226822F1E23CF2200D948C9 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -154,7 +169,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82CB4D4B1E1A93630058F507 /* HashTableTest.cpp in Sources */,
+				8245E94D1E23C95000773131 /* main2.cpp in Sources */,
+				8245E9491E23C94500773131 /* library2.cpp in Sources */,
 				82CB4D2F1E1722870058F507 /* Union.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

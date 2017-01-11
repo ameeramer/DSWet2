@@ -32,7 +32,7 @@ class UnionFind {
     struct Node** arrayOfNodes;
     struct SetInfo** arrayOfSets;
     int size;
-    
+
 public:
     UnionFind(int n, int* data){
         size = n;
@@ -50,23 +50,23 @@ public:
             arrayOfSets[i] = arrayOfNodes[i]->setInfo;
         }
     }
-    
+
     struct Node* findAux(struct Node* node){
         if(node->parent != node){
             node->parent = findAux(node->parent);
         }
         return node->parent;
     }
-    
+
     int find(int key){
         return (findAux(arrayOfNodes[key]))->setInfo->setNum;
     }
-    
+
     void Union(int key1, int key2){
         int set1 = find(key1);
         int set2 = find(key2);
         if(set1==set2) return;
-        
+
         if(arrayOfSets[set1]->numOfElements <= arrayOfSets[set2]->numOfElements){
             arrayOfSets[set1]->rootOfSet->parent = arrayOfSets[set2]->rootOfSet;
             arrayOfSets[set2]->numOfElements += arrayOfSets[set1]->numOfElements;
@@ -82,17 +82,20 @@ public:
             arrayOfSets[set2] = NULL;
         }
     }
-    
+
     int sizeOfSet(int key){
         int set = find(key);
         return arrayOfSets[set]->numOfElements;
     }
-    
+
     int dataOfSet(int key){
         int set = find(key);
         return arrayOfSets[set]->otherData;
     }
-    
+    int totalSize()
+    {
+        return this->size;
+    }
     ~UnionFind(){
         for(int i=0; i<size; i++){
             delete arrayOfNodes[i];
